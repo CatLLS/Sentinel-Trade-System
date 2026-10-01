@@ -2,13 +2,13 @@
 
 > **Base:** `pesquisaAudiencia.md` e `requisitos.md`
 > **Referência metodológica:** BEZERRA, Eduardo. *Princípios de Análise e Projeto de Sistemas com UML*, cap. 4 (Modelagem de casos de uso).
-> **Arquivo do diagrama:** `MCU.svg`. Ele precisa estar na mesma pasta deste `.md` para a imagem aparecer.
+> **Arquivo do diagrama:** `./assets/mcu.svg`. Ele precisa estar na mesma pasta deste `.md` para a imagem aparecer.
 
 ---
 
 ## 1. Diagrama
 
-![Diagrama de casos de uso do SentinelTrade](MCU.svg)
+![Diagrama de casos de uso do SentinelTrade](./assets/mcu.svg)
 
 O diagrama mostra **27 casos de uso** e **9 atores** (6 humanos, 2 sistemas externos e o Tempo). Os casos de uso estão organizados em três colunas dentro da fronteira do sistema:
 

@@ -7,7 +7,7 @@
 
 ## 1. Diagrama
 
-![Diagrama de classes de domínio do SentinelTrade](uml.svg)
+![Diagrama de classes de domínio do SentinelTrade](./assets/uml.svg)
 
 ---
 
