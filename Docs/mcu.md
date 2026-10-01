@@ -1,7 +1,9 @@
 # Modelo de Casos de Uso (MCU) — SentinelTrade
 
 > **Base:** `pesquisaAudiencia.md` e `requisitos.md`
+>
 > **Referência metodológica:** BEZERRA, Eduardo. *Princípios de Análise e Projeto de Sistemas com UML*, cap. 4 (Modelagem de casos de uso).
+>
 > **Arquivo do diagrama:** `./assets/mcu.svg`. Ele precisa estar na mesma pasta deste `.md` para a imagem aparecer.
 
 ---

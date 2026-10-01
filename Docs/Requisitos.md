@@ -1,8 +1,10 @@
 # Requisitos — SentinelTrade
 
 > **Cliente:** Orion Capital (corretora fictícia)
+>
 > **Sistema:** SentinelTrade — plataforma de trade de alta criticidade (ações, ETFs e FIIs, com ativos, contas e cotações simuladas)
 > **Base:** briefing do cliente + `pesquisaAudiencia.md`
+>
 > **Convenções:** cada requisito tem ID, descrição, **justificativa** (ligada a uma dor `D#` ou persona da pesquisa), **critério de aceitação** e prioridade **MoSCoW** (M = Must, S = Should, C = Could).
 
 ---

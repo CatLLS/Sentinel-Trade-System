@@ -1,7 +1,3 @@
-obs: fizemos uma pequena pesquisa com ajuda de IA(claude) para entender melhor
-o contexto do projeto antes de escrever os requerimentos.
-
-
 # Pesquisa de Audiência — SentinelTrade (Orion Capital)
 
 > **Objetivo:** entender quem vai usar (e quem será afetado por) uma plataforma de trade de mercado de capitais no Brasil, quais são as dores reais dessa audiência e que restrições regulatórias e de contexto moldam o produto. Esta pesquisa é a base para o documento `requisitos.md`.

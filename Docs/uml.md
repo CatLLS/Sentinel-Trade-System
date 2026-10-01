@@ -1,6 +1,7 @@
 # Modelo de Classes de Domínio (UML) — SentinelTrade
 
 > **Base:** `requisitos.md` e `MCU.md`
+>
 > **Referência metodológica:** BEZERRA, Eduardo. *Princípios de Análise e Projeto de Sistemas com UML*. O ponto de partida é o cap. 4 (casos de uso), de onde vêm as classes do domínio.
 
 ---

@@ -1,7 +1,9 @@
 # Tabela de Casos de Uso — SentinelTrade
 
 > **Base:** `MCU.md` (diagrama e descrições expandidas) e `requisitos.md`
+>
 > **Referência:** BEZERRA, Eduardo. *Princípios de Análise e Projeto de Sistemas com UML*, cap. 4.
+>
 > **Convenções:** prioridade MoSCoW (M = Must, S = Should), herdada dos requisitos rastreados. Os casos UC12–UC16 não têm ator primário próprio, porque só acontecem dentro de outro caso de uso (`«include»` ou `«extend»`).
 
 ---
