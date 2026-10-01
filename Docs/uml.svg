@@ -1,0 +1,352 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1815 1340" width="1815" height="1340" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="tri" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto"><path d="M1,1 L13,7 L1,13 Z" fill="#fff" stroke="#333" stroke-width="1.2"/></marker>
+<marker id="dia" viewBox="0 0 18 10" refX="1" refY="5" markerWidth="18" markerHeight="10" orient="auto"><path d="M1,5 L9,1 L17,5 L9,9 Z" fill="#333" stroke="#333"/></marker>
+<marker id="arr" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#333" stroke-width="1.3"/></marker>
+</defs>
+<rect width="1815" height="1340" fill="#fff"/>
+<text x="907.5" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">SentinelTrade — Diagrama de Classes de Domínio (UML)</text>
+<rect x="40" y="60" width="218" height="113" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="149.0" y="76" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">FatorMFA</text>
+<line x1="40" y1="82" x2="258" y2="82" stroke="#2b4c7e"/>
+<text x="48" y="97" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- id: UUID</text>
+<text x="48" y="112" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- tipo: TipoFator</text>
+<text x="48" y="127" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- segredoCifrado: String</text>
+<text x="48" y="142" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ativo: Boolean</text>
+<line x1="40" y1="150" x2="258" y2="150" stroke="#2b4c7e"/>
+<text x="48" y="165" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ verificar(codigo): Boolean</text>
+<rect x="40" y="205" width="183" height="158" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="131.5" y="221" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Sessao</text>
+<line x1="40" y1="227" x2="223" y2="227" stroke="#2b4c7e"/>
+<text x="48" y="242" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- id: UUID</text>
+<text x="48" y="257" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- dispositivo: String</text>
+<text x="48" y="272" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ip: String</text>
+<text x="48" y="287" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- criadaEm: DataHora</text>
+<text x="48" y="302" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- expiraEm: DataHora</text>
+<text x="48" y="317" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ativa: Boolean</text>
+<line x1="40" y1="325" x2="223" y2="325" stroke="#2b4c7e"/>
+<text x="48" y="340" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ encerrar(): void</text>
+<text x="48" y="355" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ estaValida(): Boolean</text>
+<rect x="360" y="60" width="288" height="157" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="504.0" y="75" text-anchor="middle" font-size="10" fill="#555">«abstract»</text>
+<text x="504.0" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#111" font-style="italic">Usuario</text>
+<line x1="360" y1="96" x2="648" y2="96" stroke="#2b4c7e"/>
+<text x="368" y="111" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- id: UUID</text>
+<text x="368" y="126" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- email: String</text>
+<text x="368" y="141" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- senhaHash: String</text>
+<text x="368" y="156" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- status: StatusUsuario</text>
+<text x="368" y="171" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- criadoEm: DataHora</text>
+<line x1="360" y1="179" x2="648" y2="179" stroke="#2b4c7e"/>
+<text x="368" y="194" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ autenticar(senha, codigoMfa): Sessao</text>
+<text x="368" y="209" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ bloquear(motivo): void</text>
+<rect x="780" y="60" width="197" height="143" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="878.5" y="76" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Notificacao</text>
+<line x1="780" y1="82" x2="977" y2="82" stroke="#2b4c7e"/>
+<text x="788" y="97" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- id: UUID</text>
+<text x="788" y="112" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- tipo: TipoNotificacao</text>
+<text x="788" y="127" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- canal: CanalNotificacao</text>
+<text x="788" y="142" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- conteudo: String</text>
+<text x="788" y="157" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- criadaEm: DataHora</text>
+<text x="788" y="172" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- status: StatusEnvio</text>
+<line x1="780" y1="180" x2="977" y2="180" stroke="#2b4c7e"/>
+<text x="788" y="195" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ marcarEnviada(): void</text>
+<rect x="780" y="270" width="206" height="98" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="883.0" y="286" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">PreferenciaNotificacao</text>
+<line x1="780" y1="292" x2="986" y2="292" stroke="#2b4c7e"/>
+<text x="788" y="307" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- tipo: TipoNotificacao</text>
+<text x="788" y="322" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- canal: CanalNotificacao</text>
+<text x="788" y="337" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ativa: Boolean</text>
+<line x1="780" y1="345" x2="986" y2="345" stroke="#2b4c7e"/>
+<text x="788" y="360" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ podeDesativar(): Boolean</text>
+<rect x="40" y="420" width="246" height="83" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="163.0" y="436" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Funcionario</text>
+<line x1="40" y1="442" x2="286" y2="442" stroke="#2b4c7e"/>
+<text x="48" y="457" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- matricula: String</text>
+<text x="48" y="472" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- papel: Papel</text>
+<line x1="40" y1="480" x2="286" y2="480" stroke="#2b4c7e"/>
+<text x="48" y="495" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ possuiPapel(p: Papel): Boolean</text>
+<rect x="360" y="420" width="260" height="128" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="490.0" y="436" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Investidor</text>
+<line x1="360" y1="442" x2="620" y2="442" stroke="#2b4c7e"/>
+<text x="368" y="457" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- nome: String</text>
+<text x="368" y="472" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- cpf: String</text>
+<text x="368" y="487" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- perfil: PerfilInvestidor</text>
+<text x="368" y="502" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- perfilValidoAte: Data</text>
+<line x1="360" y1="510" x2="620" y2="510" stroke="#2b4c7e"/>
+<text x="368" y="525" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ perfilVigente(): Boolean</text>
+<text x="368" y="540" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ redefinirPerfil(respostas): void</text>
+<rect x="40" y="650" width="218" height="113" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="149.0" y="666" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">LimiteRisco</text>
+<line x1="40" y1="672" x2="258" y2="672" stroke="#2b4c7e"/>
+<text x="48" y="687" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- tipo: TipoLimite</text>
+<text x="48" y="702" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- valor: Dinheiro</text>
+<text x="48" y="717" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- vigenteDesde: DataHora</text>
+<text x="48" y="732" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- definidoPor: UUID</text>
+<line x1="40" y1="740" x2="258" y2="740" stroke="#2b4c7e"/>
+<text x="48" y="755" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ permite(o: Ordem): Boolean</text>
+<rect x="360" y="650" width="225" height="158" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="472.5" y="666" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Conta</text>
+<line x1="360" y1="672" x2="585" y2="672" stroke="#2b4c7e"/>
+<text x="368" y="687" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- numero: String</text>
+<text x="368" y="702" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- saldoDisponivel: Dinheiro</text>
+<text x="368" y="717" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- saldoBloqueado: Dinheiro</text>
+<text x="368" y="732" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- versao: Long</text>
+<line x1="360" y1="740" x2="585" y2="740" stroke="#2b4c7e"/>
+<text x="368" y="755" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ reservar(v: Dinheiro): void</text>
+<text x="368" y="770" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ liberar(v: Dinheiro): void</text>
+<text x="368" y="785" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ liquidar(v: Dinheiro): void</text>
+<text x="368" y="800" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ creditar(v: Dinheiro): void</text>
+<rect x="360" y="880" width="274" height="158" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="497.0" y="896" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Posicao</text>
+<line x1="360" y1="902" x2="634" y2="902" stroke="#2b4c7e"/>
+<text x="368" y="917" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- quantidadeTotal: Integer</text>
+<text x="368" y="932" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- quantidadeBloqueada: Integer</text>
+<text x="368" y="947" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- precoMedio: Dinheiro</text>
+<text x="368" y="962" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- versao: Long</text>
+<line x1="360" y1="970" x2="634" y2="970" stroke="#2b4c7e"/>
+<text x="368" y="985" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ disponivelParaVenda(): Integer</text>
+<text x="368" y="1000" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ reservar(qtd): void</text>
+<text x="368" y="1015" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ liberar(qtd): void</text>
+<text x="368" y="1030" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ aplicarExecucao(e: Execucao): void</text>
+<rect x="720" y="620" width="393" height="323" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="916.5" y="636" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Ordem</text>
+<line x1="720" y1="642" x2="1113" y2="642" stroke="#2b4c7e"/>
+<text x="728" y="657" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- id: UUID</text>
+<text x="728" y="672" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- numeroSequencial: Long</text>
+<text x="728" y="687" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- chaveIdempotencia: String</text>
+<text x="728" y="702" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- lado: LadoOrdem</text>
+<text x="728" y="717" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- tipo: TipoOrdem</text>
+<text x="728" y="732" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- quantidade: Integer</text>
+<text x="728" y="747" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- quantidadeExecutada: Integer</text>
+<text x="728" y="762" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- precoLimite: Dinheiro [0..1]</text>
+<text x="728" y="777" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- validade: ValidadeOrdem</text>
+<text x="728" y="792" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- status: StatusOrdem</text>
+<text x="728" y="807" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- canal: CanalOrdem</text>
+<text x="728" y="822" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- criadaEm: DataHora</text>
+<text x="728" y="837" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- versao: Long</text>
+<line x1="720" y1="845" x2="1113" y2="845" stroke="#2b4c7e"/>
+<text x="728" y="860" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ validar(ctx: ContextoValidacao): ResultadoValidacao</text>
+<text x="728" y="875" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ marcarEnviada(): void</text>
+<text x="728" y="890" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ registrarExecucao(e: Execucao): void</text>
+<text x="728" y="905" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ solicitarCancelamento(): void</text>
+<text x="728" y="920" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ marcarPendenteReconciliacao(): void</text>
+<text x="728" y="935" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- transicionarPara(s: StatusOrdem, motivo): void</text>
+<rect x="720" y="1070" width="183" height="113" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="811.5" y="1086" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Execucao</text>
+<line x1="720" y1="1092" x2="903" y2="1092" stroke="#2b4c7e"/>
+<text x="728" y="1107" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- id: UUID</text>
+<text x="728" y="1122" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- idNaBolsa: String</text>
+<text x="728" y="1137" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- quantidade: Integer</text>
+<text x="728" y="1152" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- preco: Dinheiro</text>
+<text x="728" y="1167" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- executadaEm: DataHora</text>
+<line x1="720" y1="1175" x2="903" y2="1175" stroke="#2b4c7e"/>
+<rect x="940" y="1070" width="176" height="98" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1028.0" y="1086" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">TransicaoOrdem</text>
+<line x1="940" y1="1092" x2="1116" y2="1092" stroke="#2b4c7e"/>
+<text x="948" y="1107" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- de: StatusOrdem</text>
+<text x="948" y="1122" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- para: StatusOrdem</text>
+<text x="948" y="1137" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ocorridaEm: DataHora</text>
+<text x="948" y="1152" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- motivo: String</text>
+<line x1="940" y1="1160" x2="1116" y2="1160" stroke="#2b4c7e"/>
+<rect x="1240" y="620" width="197" height="128" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1338.5" y="636" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Ativo</text>
+<line x1="1240" y1="642" x2="1437" y2="642" stroke="#2b4c7e"/>
+<text x="1248" y="657" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ticker: String</text>
+<text x="1248" y="672" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- tipo: TipoAtivo</text>
+<text x="1248" y="687" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- lotePadrao: Integer</text>
+<text x="1248" y="702" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- tickPreco: Dinheiro</text>
+<text x="1248" y="717" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- situacao: SituacaoAtivo</text>
+<line x1="1240" y1="725" x2="1437" y2="725" stroke="#2b4c7e"/>
+<text x="1248" y="740" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ negociavel(): Boolean</text>
+<rect x="1500" y="620" width="274" height="143" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1637.0" y="636" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Cotacao</text>
+<line x1="1500" y1="642" x2="1774" y2="642" stroke="#2b4c7e"/>
+<text x="1508" y="657" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ultimoPreco: Dinheiro</text>
+<text x="1508" y="672" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- variacao: Decimal</text>
+<text x="1508" y="687" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- maxima: Dinheiro</text>
+<text x="1508" y="702" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- minima: Dinheiro</text>
+<text x="1508" y="717" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- volume: Long</text>
+<text x="1508" y="732" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- atualizadaEm: DataHora</text>
+<line x1="1500" y1="740" x2="1774" y2="740" stroke="#2b4c7e"/>
+<text x="1508" y="755" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ estaDesatualizada(limite): Boolean</text>
+<rect x="1240" y="830" width="246" height="83" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1363.0" y="846" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">AceiteForaPerfil</text>
+<line x1="1240" y1="852" x2="1486" y2="852" stroke="#2b4c7e"/>
+<text x="1248" y="867" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- aceitoEm: DataHora</text>
+<text x="1248" y="882" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- perfilNaData: PerfilInvestidor</text>
+<text x="1248" y="897" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- textoApresentado: String</text>
+<line x1="1240" y1="905" x2="1486" y2="905" stroke="#2b4c7e"/>
+<rect x="1520" y="860" width="274" height="113" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1657.0" y="876" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">CalendarioMercado</text>
+<line x1="1520" y1="882" x2="1794" y2="882" stroke="#2b4c7e"/>
+<text x="1528" y="897" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- data: Data</text>
+<text x="1528" y="912" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- fase: FaseMercado</text>
+<text x="1528" y="927" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- inicioFase: Hora</text>
+<text x="1528" y="942" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- fimFase: Hora</text>
+<line x1="1520" y1="950" x2="1794" y2="950" stroke="#2b4c7e"/>
+<text x="1528" y="965" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ aceitaOrdens(t: DataHora): Boolean</text>
+<rect x="1240" y="1070" width="281" height="112" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1380.5" y="1085" text-anchor="middle" font-size="10" fill="#555">«append-only»</text>
+<text x="1380.5" y="1100" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">TrilhaAuditoria</text>
+<line x1="1240" y1="1106" x2="1521" y2="1106" stroke="#2b4c7e"/>
+<text x="1248" y="1121" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ultimaSequencia: Long</text>
+<text x="1248" y="1136" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ultimoHash: String</text>
+<line x1="1240" y1="1144" x2="1521" y2="1144" stroke="#2b4c7e"/>
+<text x="1248" y="1159" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ registrar(e: EventoAuditoria): void</text>
+<text x="1248" y="1174" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ verificarIntegridade(): Boolean</text>
+<rect x="1600" y="1030" width="190" height="217" fill="#eef4ff" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1695.0" y="1045" text-anchor="middle" font-size="10" fill="#555">«imutável»</text>
+<text x="1695.0" y="1060" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">EventoAuditoria</text>
+<line x1="1600" y1="1066" x2="1790" y2="1066" stroke="#2b4c7e"/>
+<text x="1608" y="1081" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- sequencia: Long</text>
+<text x="1608" y="1096" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- ocorridoEm: DataHora</text>
+<text x="1608" y="1111" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- autorId: UUID</text>
+<text x="1608" y="1126" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- acao: String</text>
+<text x="1608" y="1141" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- recurso: String</text>
+<text x="1608" y="1156" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- origemIp: String</text>
+<text x="1608" y="1171" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- correlacaoId: UUID</text>
+<text x="1608" y="1186" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- resultado: String</text>
+<text x="1608" y="1201" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- hashAnterior: String</text>
+<text x="1608" y="1216" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- hash: String</text>
+<line x1="1600" y1="1224" x2="1790" y2="1224" stroke="#2b4c7e"/>
+<text x="1608" y="1239" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ calcularHash(): String</text>
+<rect x="1060" y="60" width="253" height="112" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1186.5" y="75" text-anchor="middle" font-size="10" fill="#555">«dataType»</text>
+<text x="1186.5" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Dinheiro</text>
+<line x1="1060" y1="96" x2="1313" y2="96" stroke="#2b4c7e"/>
+<text x="1068" y="111" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- valor: Decimal(18,2)</text>
+<text x="1068" y="126" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">- moeda: String = "BRL"</text>
+<line x1="1060" y1="134" x2="1313" y2="134" stroke="#2b4c7e"/>
+<text x="1068" y="149" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ somar(d: Dinheiro): Dinheiro</text>
+<text x="1068" y="164" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">+ subtrair(d: Dinheiro): Dinheiro</text>
+<rect x="1060" y="215" width="183" height="209" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1151.5" y="230" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1151.5" y="245" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">StatusOrdem</text>
+<line x1="1060" y1="251" x2="1243" y2="251" stroke="#2b4c7e"/>
+<text x="1068" y="266" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">CRIADA</text>
+<text x="1068" y="281" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">VALIDADA</text>
+<text x="1068" y="296" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">ENVIADA</text>
+<text x="1068" y="311" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">PENDENTE_RECONCILIACAO</text>
+<text x="1068" y="326" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">ABERTA</text>
+<text x="1068" y="341" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">PARCIALMENTE_EXECUTADA</text>
+<text x="1068" y="356" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">EXECUTADA</text>
+<text x="1068" y="371" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">CANCELAMENTO_SOLICITADO</text>
+<text x="1068" y="386" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">CANCELADA</text>
+<text x="1068" y="401" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">REJEITADA</text>
+<text x="1068" y="416" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">EXPIRADA</text>
+<rect x="1340" y="60" width="108" height="74" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1394.0" y="75" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1394.0" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">LadoOrdem</text>
+<line x1="1340" y1="96" x2="1448" y2="96" stroke="#2b4c7e"/>
+<text x="1348" y="111" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">COMPRA</text>
+<text x="1348" y="126" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">VENDA</text>
+<rect x="1340" y="160" width="108" height="74" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1394.0" y="175" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1394.0" y="190" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">TipoOrdem</text>
+<line x1="1340" y1="196" x2="1448" y2="196" stroke="#2b4c7e"/>
+<text x="1348" y="211" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">MERCADO</text>
+<text x="1348" y="226" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">LIMITADA</text>
+<rect x="1340" y="260" width="156" height="89" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1418.0" y="275" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1418.0" y="290" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">PerfilInvestidor</text>
+<line x1="1340" y1="296" x2="1496" y2="296" stroke="#2b4c7e"/>
+<text x="1348" y="311" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">CONSERVADOR</text>
+<text x="1348" y="326" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">MODERADO</text>
+<text x="1348" y="341" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">ARROJADO</text>
+<rect x="1340" y="375" width="108" height="119" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1394.0" y="390" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1394.0" y="405" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Papel</text>
+<line x1="1340" y1="411" x2="1448" y2="411" stroke="#2b4c7e"/>
+<text x="1348" y="426" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">SUPORTE</text>
+<text x="1348" y="441" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">OPERADOR</text>
+<text x="1348" y="456" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">RISCO</text>
+<text x="1348" y="471" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">AUDITOR</text>
+<text x="1348" y="486" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">ADMIN</text>
+<rect x="1530" y="60" width="108" height="89" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1584.0" y="75" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1584.0" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">TipoAtivo</text>
+<line x1="1530" y1="96" x2="1638" y2="96" stroke="#2b4c7e"/>
+<text x="1538" y="111" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">ACAO</text>
+<text x="1538" y="126" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">ETF</text>
+<text x="1538" y="141" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">FII</text>
+<rect x="1530" y="175" width="114" height="104" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1587.0" y="190" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1587.0" y="205" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">FaseMercado</text>
+<line x1="1530" y1="211" x2="1644" y2="211" stroke="#2b4c7e"/>
+<text x="1538" y="226" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">PRE_ABERTURA</text>
+<text x="1538" y="241" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">NEGOCIACAO</text>
+<text x="1538" y="256" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">LEILAO</text>
+<text x="1538" y="271" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">FECHADO</text>
+<rect x="1530" y="305" width="108" height="89" fill="#f3f3f3" stroke="#2b4c7e" stroke-width="1.3"/>
+<text x="1584.0" y="320" text-anchor="middle" font-size="10" fill="#555">«enumeration»</text>
+<text x="1584.0" y="335" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">CanalOrdem</text>
+<line x1="1530" y1="341" x2="1638" y2="341" stroke="#2b4c7e"/>
+<text x="1538" y="356" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">APP</text>
+<text x="1538" y="371" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">WEB</text>
+<text x="1538" y="386" font-size="11.5" fill="#111" font-family="Menlo, Consolas, monospace">MESA</text>
+<polyline points="490,420 490,395" fill="none" stroke="#333" stroke-width="1.2"/>
+<polyline points="163,420 163,395" fill="none" stroke="#333" stroke-width="1.2"/>
+<polyline points="163,395 490,395" fill="none" stroke="#333" stroke-width="1.2"/>
+<polyline points="446,395 446,217" fill="none" stroke="#333" stroke-width="1.2" marker-end="url(#tri)"/>
+<text x="454" y="387" text-anchor="start" font-size="10" fill="#555">{completa, disjunta}</text>
+<polyline points="360,99 300,99 300,94 258,94" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="346" y="94" text-anchor="middle" font-size="11" fill="#111">1</text>
+<text x="266" y="89" text-anchor="start" font-size="11" fill="#111">1..*</text>
+<polyline points="360,186 320,186 320,260 223,260" fill="none" stroke="#333" stroke-width="1.2"/>
+<text x="348" y="181" text-anchor="middle" font-size="11" fill="#111">1</text>
+<text x="231" y="255" text-anchor="start" font-size="11" fill="#111">0..*</text>
+<text x="312" y="227" text-anchor="end" font-size="10.5" fill="#555" font-style="italic">abre</text>
+<polyline points="620,446 680,446 680,167 780,167" fill="none" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="628" y="441" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="774" y="162" text-anchor="end" font-size="11" fill="#111">0..*</text>
+<text x="686" y="183" text-anchor="start" font-size="10.5" fill="#555" font-style="italic">recebe</text>
+<polyline points="620,490 705,490 705,319 780,319" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="642" y="504" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="774" y="314" text-anchor="end" font-size="11" fill="#111">0..*</text>
+<polyline points="464,548 450,650" fill="none" stroke="#333" stroke-width="1.2"/>
+<text x="470" y="562" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="456" y="644" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="484" y="603" text-anchor="start" font-size="10.5" fill="#555" font-style="italic">titular de</text>
+<polyline points="360,713 258,695" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="338" y="708" text-anchor="middle" font-size="11" fill="#111">1</text>
+<text x="264" y="690" text-anchor="start" font-size="11" fill="#111">0..*</text>
+<polyline points="450,808 470,880" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="458" y="832" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="478" y="874" text-anchor="start" font-size="11" fill="#111">0..*</text>
+<polyline points="585,690 615,690 615,659 720,659" fill="none" stroke="#333" stroke-width="1.2"/>
+<text x="591" y="684" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="714" y="654" text-anchor="end" font-size="11" fill="#111">0..*</text>
+<text x="621" y="690" text-anchor="start" font-size="10.5" fill="#555" font-style="italic">origina</text>
+<polyline points="759,620 759,193 648,193" fill="none" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="765" y="612" text-anchor="start" font-size="11" fill="#111">0..*</text>
+<text x="656" y="187" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="656" y="209" text-anchor="start" font-size="10.5" fill="#555" font-style="italic">emissor</text>
+<polyline points="1113,646 1240,646" fill="none" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="1119" y="641" text-anchor="start" font-size="11" fill="#111">0..*</text>
+<text x="1234" y="641" text-anchor="end" font-size="11" fill="#111">1</text>
+<polyline points="1437,652 1500,656" fill="none" stroke="#333" stroke-width="1.2"/>
+<text x="1443" y="647" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="1494" y="651" text-anchor="end" font-size="11" fill="#111">0..1</text>
+<text x="1468" y="668" text-anchor="middle" font-size="10.5" fill="#555" font-style="italic">última</text>
+<polyline points="1113,872 1240,872" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="1135" y="866" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="1234" y="866" text-anchor="end" font-size="11" fill="#111">0..1</text>
+<polyline points="634,991 690,991 690,1040 1170,1040 1170,785 1270,785 1270,748" fill="none" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="640" y="986" text-anchor="start" font-size="11" fill="#111">0..*</text>
+<text x="1276" y="762" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="700" y="1034" text-anchor="start" font-size="10.5" fill="#555" font-style="italic">refere-se a</text>
+<polyline points="799,943 799,1055 812,1055 812,1070" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="807" y="967" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="818" y="1064" text-anchor="start" font-size="11" fill="#111">0..*</text>
+<polyline points="964,943 964,1055 1028,1055 1028,1070" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="972" y="967" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="1034" y="1064" text-anchor="start" font-size="11" fill="#111">1..*</text>
+<text x="1068" y="1064" text-anchor="start" font-size="10.5" fill="#555" font-style="italic">histórico</text>
+<polyline points="1521,1126 1600,1126" fill="none" stroke="#333" stroke-width="1.2" marker-start="url(#dia)"/>
+<text x="1545" y="1120" text-anchor="start" font-size="11" fill="#111">1</text>
+<text x="1594" y="1120" text-anchor="end" font-size="11" fill="#111">0..*</text>
+<text x="1568" y="1142" text-anchor="middle" font-size="10.5" fill="#555" font-style="italic">{ordered}</text>
+<polyline points="1082,943 1082,1005 1222,1005 1222,1126 1240,1126" fill="none" stroke="#333" stroke-width="1.2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+<text x="1090" y="999" text-anchor="start" font-size="10.5" fill="#555" font-style="italic">«registra eventos em»</text>
+<g font-size="11" fill="#333"><rect x="20" y="1250" width="1190" height="70" fill="#fff" stroke="#bbb"/><text x="32" y="1270" font-weight="bold">Legenda</text><line x1="100" y1="1266" x2="140" y2="1266" stroke="#333" marker-end="url(#tri)"/><text x="148" y="1270">generalização</text><line x1="250" y1="1266" x2="292" y2="1266" stroke="#333" marker-start="url(#dia)"/><text x="300" y="1270">composição (losango no todo)</text><line x1="480" y1="1266" x2="520" y2="1266" stroke="#333" marker-end="url(#arr)"/><text x="528" y="1270">associação navegável</text><line x1="670" y1="1266" x2="710" y2="1266" stroke="#333" stroke-dasharray="6,4" marker-end="url(#arr)"/><text x="718" y="1270">dependência</text><text x="820" y="1270">-  privado      +  público</text><text x="32" y="1292">Classes de entidade (domínio). Classes de fronteira e de controle (telas, serviços, gateway da bolsa, fila) ficam para o modelo de projeto.</text><text x="32" y="1309">Tipos auxiliares (StatusUsuario, TipoFator, TipoLimite, SituacaoAtivo, ValidadeOrdem, TipoNotificacao, CanalNotificacao, StatusEnvio) são enumerações omitidas por espaço.</text></g>
+</svg>

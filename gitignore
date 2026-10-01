@@ -1,0 +1,181 @@
+# =============================================================================
+# SentinelTrade — .gitignore (rascunho)
+# -----------------------------------------------------------------------------
+# A stack ainda não foi definida. Este arquivo cobre as opções mais prováveis
+# (Node/TypeScript, Java/Kotlin, Python) e a infraestrutura local (Docker).
+# Ao escolher a stack, vamos remover os blocos que não se aplicam.
+#
+# Regra principal (RNF-SEG-09): NENHUM segredo vai para o repositório.
+# Só o .env.example (sem valores reais) é versionado.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# 1. Segredos e configuração local  (RNF-SEG-09)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.env
+!*.env.example
+
+# Chaves, certificados e keystores (TLS, assinatura de tokens, mTLS com a bolsa simulada)
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.truststore
+secrets/
+**/secrets/
+
+# Credenciais de cofre / nuvem usadas em desenvolvimento
+.vault-token
+credentials.json
+service-account*.json
+.aws/
+.gcp/
+
+# Arquivos de override local (configs pessoais de cada membro do grupo)
+docker-compose.override.yml
+*.local.yml
+*.local.yaml
+config/local.*
+
+
+# -----------------------------------------------------------------------------
+# 2. Dados locais e dados sensíveis  (LGPD / RNF-SEG-12)
+# -----------------------------------------------------------------------------
+# Volumes dos containers (banco, fila, log de auditoria em dev)
+.data/
+data/
+volumes/
+*.db
+*.sqlite
+*.sqlite3
+
+# Dumps e exportações: podem conter dados de investidores, mesmo simulados
+*.dump
+*.sql.gz
+*.backup
+dumps/
+exports/
+*.csv.export
+
+# Comprovantes e relatórios gerados localmente (RF-26, RF-27)
+comprovantes/
+relatorios/out/
+
+# Exceções: dados SIMULADOS e versionados de propósito (seeds de ativos e contas)
+!seeds/
+!seeds/**
+
+
+# -----------------------------------------------------------------------------
+# 3. Logs  (a trilha de auditoria real NÃO vive no repositório — RNF-AUD-02)
+# -----------------------------------------------------------------------------
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+audit-local/
+
+
+# -----------------------------------------------------------------------------
+# 4. Node.js / TypeScript
+# -----------------------------------------------------------------------------
+node_modules/
+dist/
+build/
+out/
+.next/
+.nuxt/
+.turbo/
+.cache/
+*.tsbuildinfo
+.npm/
+.pnpm-store/
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+
+
+# -----------------------------------------------------------------------------
+# 5. Java / Kotlin (Maven / Gradle)
+# -----------------------------------------------------------------------------
+target/
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+*.class
+hs_err_pid*
+
+
+# -----------------------------------------------------------------------------
+# 6. Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+
+# -----------------------------------------------------------------------------
+# 7. Testes, cobertura e relatórios de qualidade
+# -----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+htmlcov/
+.coverage
+.coverage.*
+junit*.xml
+test-results/
+reports/
+# Resultados de testes de carga e caos (RNF-DES, RNF-RES-09)
+loadtest/results/
+chaos/results/
+
+
+# -----------------------------------------------------------------------------
+# 8. Infraestrutura
+# -----------------------------------------------------------------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.terraform.lock.hcl
+
+
+# -----------------------------------------------------------------------------
+# 9. IDEs e sistema operacional
+# -----------------------------------------------------------------------------
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# -----------------------------------------------------------------------------
+# 10. Documentação: artefatos de renderização dos diagramas
+# -----------------------------------------------------------------------------
+# Os .svg dos diagramas SÃO versionados; prévias PNG geradas localmente não.
+docs/**/*.preview.png
