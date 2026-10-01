@@ -7,13 +7,14 @@
 
 ## Briefing
 
-- Trabalho de projeto de software focado em arquitetura de software de um sistema de trade.
+- Trabalho de projeto de software focado em arquitetura de software de um sistema de trade;
+- Para entendimento do contexto e melhor compreensão dos requerimentos, usamos a ferramenta _Deep Research_ do Claude, mas sempre validando o que nos era retornado.
 
 ## Leitura dos Documentos
 
 - Recomenda-se que a ordem de leitura a seguir seja seguida para melhor compreensão do projeto:
-    1. [ ] ![](./Docs/pesquisa-audiencia.md);
-    2. [ ] ![](./Docs/requisitos.md);
-    3. [ ] ![](./Docs/tabela-casos-de-uso.md);
-    4. [ ] ![](./Docs/mcu.md);
-    5. [ ] ![](./Docs/uml.md);
+    1. [ ] [Pesquisa de Audiência](./Docs/pesquisa-audiencia.md);
+    2. [ ] [Requisitos](./Docs/requisitos.md);
+    3. [ ] [Tabela de Casos de Uso](./Docs/tabela-casos-de-uso.md);
+    4. [ ] [MCU](./Docs/mcu.md);
+    5. [ ] [UML](./Docs/uml.md);
